@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explora STEAM | Aprender creando</title>
+<style>
+:root{--navy:#172554;--ink:#243047;--muted:#64748b;--bg:#f5f7ff;--card:#fff;--purple:#7357e8;--pink:#f05b9b;--blue:#3a82f6;--green:#16a085;--orange:#f59e0b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+header{background:linear-gradient(125deg,#172554,#4734a6 55%,#8b5cf6);color:white;padding:22px 7% 74px;position:relative;overflow:hidden}
+nav{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;max-width:1150px;margin:auto}
+.logo{font-weight:900;font-size:1.2rem;letter-spacing:.5px}.logo span{color:#f9a8d4}
+nav a{color:#fff;text-decoration:none;font-size:.92rem;margin-left:18px}nav a:hover{text-decoration:underline}
+.hero{max-width:1150px;margin:68px auto 0;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:35px}
+.eyebrow{display:inline-block;background:#ffffff24;border:1px solid #ffffff50;border-radius:99px;padding:5px 13px;font-size:.85rem}
+h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;margin:18px 0}h1 span{color:#f9a8d4}
+.hero p{font-size:1.12rem;max-width:650px;color:#e5e7ff}.btn{display:inline-block;border:0;border-radius:12px;padding:12px 18px;font-weight:800;text-decoration:none;cursor:pointer;transition:.2s}
+.btn-light{background:#fff;color:#312e81;margin-top:12px}.btn-light:hover{transform:translateY(-2px);box-shadow:0 8px 20px #0002}
+.orbit{min-height:280px;display:grid;place-items:center;position:relative}.core{width:145px;height:145px;border-radius:50%;background:#fff;color:#4936a7;display:grid;place-items:center;text-align:center;font-size:1.6rem;font-weight:950;box-shadow:0 0 0 18px #ffffff18,0 0 0 38px #ffffff0d}
+.bubble{position:absolute;width:70px;height:70px;border-radius:22px;display:grid;place-items:center;font-size:2rem;box-shadow:0 12px 24px #15113b35;transform:rotate(-7deg)}.b1{top:15px;left:15% ;background:#ffcf70}.b2{top:30px;right:9%;background:#a7f3d0}.b3{bottom:25px;left:8%;background:#bfdbfe}.b4{bottom:5px;right:18%;background:#fbcfe8}.b5{top:45%;right:0;background:#ddd6fe}
+main{max-width:1150px;margin:-35px auto 0;padding:0 22px 60px;position:relative}
+.intro{background:white;border-radius:22px;padding:26px 30px;box-shadow:0 14px 35px #1e2a5510;display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.intro h2{margin:0 0 8px;color:var(--navy)}.intro p{margin:0;color:var(--muted)}
+.section{padding:60px 0 8px}.section-head{text-align:center;max-width:720px;margin:0 auto 28px}.section-head h2{font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.2;margin:0 0 10px;color:var(--navy)}.section-head p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.card{background:var(--card);border-radius:18px;padding:22px 18px;border:1px solid #e8eaf5;box-shadow:0 8px 24px #1e2a5508;transition:.2s}.card:hover{transform:translateY(-5px);box-shadow:0 16px 30px #1e2a5514}.emoji{font-size:2.2rem}.card h3{margin:8px 0 5px;color:var(--navy)}.card p{font-size:.93rem;color:var(--muted);margin:0}.tag{display:inline-block;margin-top:13px;padding:4px 9px;border-radius:99px;font-size:.75rem;font-weight:800;background:#f1efff;color:#5b46bd}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panel{padding:26px;border-radius:20px;background:white;border:1px solid #e8eaf5}.panel h3{margin-top:0;color:var(--navy)}.panel li{padding:5px 0}.panel ul{padding-left:21px}
+.example{background:linear-gradient(120deg,#e0f2fe,#f3e8ff);border-radius:22px;padding:28px;display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:center}.example h3{font-size:1.55rem;margin:0 0 8px;color:#312e81}.steps{display:grid;grid-template-columns:1fr 1fr;gap:10px}.step{background:#ffffffc9;padding:14px;border-radius:14px}.step strong{display:block;color:#4338ca}
+.quiz{background:#172554;color:white;border-radius:24px;padding:30px;display:grid;grid-template-columns:.8fr 1.2fr;gap:30px}.quiz h2{font-size:2rem;line-height:1.15;margin-top:0}.quiz .sub{color:#c7d2fe}.question{background:#fff;color:var(--ink);padding:22px;border-radius:18px}.question h3{margin:0 0 14px}.answers{display:grid;gap:9px}.answer{background:#f3f4f6;border:2px solid transparent;border-radius:11px;padding:11px 13px;text-align:left;font:inherit;cursor:pointer}.answer:hover{border-color:#a5b4fc}.answer.correct{background:#dcfce7;border-color:#22c55e}.answer.wrong{background:#fee2e2;border-color:#ef4444}.feedback{font-weight:750;min-height:28px;margin:12px 0 0}.quiz-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}.btn-purple{background:#7357e8;color:#fff}.btn-purple:hover{background:#6044d4}.score{font-weight:800;color:#c7d2fe}
+footer{text-align:center;padding:30px 20px;color:#64748b;font-size:.9rem}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr;margin-top:48px}.orbit{min-height:230px}.intro,.two-col,.example,.quiz{grid-template-columns:1fr}}
+@media(max-width:520px){header{padding:18px 6% 65px}nav{align-items:flex-start}nav div:last-child{display:flex;flex-wrap:wrap;gap:10px}nav a{margin:0 10px 0 0}.cards{grid-template-columns:1fr}.intro{padding:22px}.steps{grid-template-columns:1fr}.bubble{width:58px;height:58px;font-size:1.6rem}.core{width:125px;height:125px}}
+</style>
+</head>
+<body>
+<header id="inicio">
+  <nav>
+    <div class="logo">AULA <span>STEAM</span> ✦</div>
+    <div><a href="#que-es">¿Qué es?</a><a href="#areas">Las áreas</a><a href="#ejemplo">Ejemplo</a><a href="#actividad">Actividad</a></div>
+  </nav>
+  <div class="hero">
+    <div>
+      <span class="eyebrow">Aprender · Explorar · Crear</span>
+      <h1>¡Bienvenido al universo <span>STEAM!</span></h1>
+      <p>Una forma de aprender conectando la ciencia, la tecnología, la ingeniería, el arte y las matemáticas para comprender el mundo y crear soluciones a problemas reales.</p>
+      <a class="btn btn-light" href="#que-es">Comenzar a explorar ↓</a>
+    </div>
+    <div class="orbit" aria-label="Ilustración de las cinco áreas STEAM">
+      <div class="core">STEAM<br><small style="font-size:.8rem">¡Crea!</small></div>
+      <div class="bubble b1">🔬</div><div class="bubble b2">💻</div><div class="bubble b3">⚙️</div><div class="bubble b4">🎨</div><div class="bubble b5">📐</div>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="intro" id="que-es">
+    <div><h2>¿Qué es STEAM?</h2><p>STEAM es un enfoque educativo que integra cinco áreas del conocimiento en experiencias prácticas, creativas y colaborativas. En lugar de estudiar cada materia de forma aislada, las conecta para investigar, diseñar, probar ideas y resolver desafíos.</p></div>
+    <div><h2>¿Qué significa cada letra?</h2><p><strong>S</strong>cience (Ciencia) · <strong>T</strong>echnology (Tecnología) · <strong>E</strong>ngineering (Ingeniería) · <strong>A</strong>rts (Artes) · <strong>M</strong>athematics (Matemáticas).</p></div>
+  </section>
+
+  <section class="section" id="areas">
+    <div class="section-head"><h2>Las cinco áreas de STEAM</h2><p>Cada área aporta una manera diferente de observar y transformar el mundo. ¡Juntas son aún más poderosas!</p></div>
+    <div class="cards">
+      <article class="card"><div class="emoji">🔬</div><h3>Ciencia</h3><p>Permite observar, hacer preguntas, formular hipótesis y experimentar para entender cómo funcionan las cosas.</p><span class="tag">Investigar</span></article>
+      <article class="card"><div class="emoji">💻</div><h3>Tecnología</h3><p>Utiliza herramientas, dispositivos y conocimientos para resolver necesidades y facilitar tareas.</p><span class="tag">Crear herramientas</span></article>
+      <article class="card"><div class="emoji">⚙️</div><h3>Ingeniería</h3><p>Consiste en diseñar, construir, probar y mejorar soluciones, estructuras o sistemas.</p><span class="tag">Diseñar soluciones</span></article>
+      <article class="card"><div class="emoji">🎨</div><h3>Artes</h3><p>Incluye la creatividad, el diseño, la comunicación y la expresión para imaginar propuestas originales.</p><span class="tag">Imaginar</span></article>
+      <article class="card"><div class="emoji">📐</div><h3>Matemáticas</h3><p>Ayudan a medir, contar, reconocer patrones, calcular cantidades y analizar resultados.</p><span class="tag">Medir y calcular</span></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>¿Cómo se aprende con STEAM?</h2><p>El estudiante participa activamente: no solo memoriza información, sino que la utiliza para resolver un reto.</p></div>
+    <div class="two-col">
+      <div class="panel"><h3>🧠 Características principales</h3><ul><li><strong>Integración:</strong> conecta conocimientos de distintas áreas.</li><li><strong>Aprendizaje práctico:</strong> aprender haciendo y experimentando.</li><li><strong>Creatividad:</strong> explorar ideas y proponer diferentes soluciones.</li><li><strong>Trabajo colaborativo:</strong> compartir responsabilidades y escuchar al equipo.</li><li><strong>Resolución de problemas:</strong> analizar, probar, evaluar y mejorar.</li></ul></div>
+      <div class="panel"><h3>🌟 Beneficios educativos</h3><ul><li>Fortalece el pensamiento crítico y lógico.</li><li>Promueve la curiosidad y la motivación.</li><li>Relaciona lo aprendido con la vida cotidiana.</li><li>Desarrolla habilidades de comunicación y colaboración.</li><li>Invita a aprender de los errores y mejorar las ideas.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="section" id="ejemplo">
+    <div class="section-head"><h2>STEAM en acción</h2><p>Un ejemplo sencillo: diseñar un puente con materiales reutilizables que pueda soportar varios objetos.</p></div>
+    <div class="example">
+      <div><div style="font-size:3.5rem">🌉</div><h3>El reto: construir un puente resistente</h3><p>El equipo debe diseñar una estructura, probarla y mejorarla sin desperdiciar materiales.</p></div>
+      <div class="steps">
+        <div class="step"><strong>🔬 Ciencia</strong>Observar qué formas y materiales resisten mejor.</div>
+        <div class="step"><strong>💻 Tecnología</strong>Consultar ideas o usar una herramienta digital para planear.</div>
+        <div class="step"><strong>⚙️ Ingeniería</strong>Construir, probar y reforzar el puente.</div>
+        <div class="step"><strong>🎨 Artes</strong>Crear un diseño atractivo y comunicar la idea.</div>
+        <div class="step"><strong>📐 Matemáticas</strong>Medir la longitud y contar cuánto peso soporta.</div>
+        <div class="step"><strong>🔁 Mejorar</strong>Analizar el resultado, corregir y volver a probar.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="actividad">
+    <div class="quiz">
+      <div><span class="eyebrow">¡Comprueba lo aprendido!</span><h2>Mini reto STEAM</h2><p class="sub">Responde las preguntas y revisa tu resultado. Puedes volver a intentarlo para mejorar tu puntuación.</p><div class="score" id="score">Puntuación: 0 de 3</div></div>
+      <div class="question">
+        <h3 id="qtext">1. ¿Qué significa la letra A en STEAM?</h3>
+        <div class="answers" id="answers">
+          <button class="answer" data-index="0">A. Astronomía</button>
+          <button class="answer" data-index="1">B. Artes</button>
+          <button class="answer" data-index="2">C. Animales</button>
+        </div>
+        <p class="feedback" id="feedback" aria-live="polite"></p>
+        <div class="quiz-controls"><button class="btn btn-purple" id="next" disabled>Siguiente pregunta →</button><button class="btn btn-purple" id="restart" style="display:none">Volver a jugar ↻</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>STEAM: aprender conectando ideas para imaginar y construir un mundo mejor. ✦</footer>
+<script>
+const questions=[
+ {q:"1. ¿Qué significa la letra A en STEAM?",a:["A. Astronomía","B. Artes","C. Animales"],correct:1,why:"¡Correcto! La A representa Arts, es decir, Artes, e incluye creatividad, diseño y expresión."},
+ {q:"2. Si mides un puente y calculas cuánto peso soporta, ¿qué área utilizas?",a:["A. Matemáticas","B. Artes solamente","C. Ninguna"],correct:0,why:"¡Muy bien! Las matemáticas ayudan a medir, contar y calcular resultados."},
+ {q:"3. ¿Cuál es una característica del enfoque STEAM?",a:["A. Estudiar cada área sin relacionarlas","B. Evitar los errores","C. Integrar áreas para resolver problemas"],correct:2,why:"¡Exacto! STEAM conecta conocimientos y permite probar, aprender de los errores y mejorar soluciones."}
+];
+let current=0,score=0,answered=false;
+const qtext=document.getElementById("qtext"), answers=document.getElementById("answers"), feedback=document.getElementById("feedback"), next=document.getElementById("next"), restart=document.getElementById("restart"), scoreEl=document.getElementById("score");
+function render(){const q=questions[current];qtext.textContent=q.q;answers.innerHTML="";q.a.forEach((label,i)=>{const b=document.createElement("button");b.className="answer";b.textContent=label;b.addEventListener("click",()=>choose(i,b));answers.appendChild(b)});feedback.textContent="";next.disabled=true;next.style.display=current===questions.length-1?"none":"inline-block";restart.style.display="none";answered=false;scoreEl.textContent=`Puntuación: ${score} de ${questions.length}`}
+function choose(i,button){if(answered)return;answered=true;const q=questions[current];[...answers.children].forEach((b,j)=>{b.disabled=true;if(j===q.correct)b.classList.add("correct")});if(i===q.correct){score++;feedback.textContent=q.why;feedback.style.color="#15803d"}else{button.classList.add("wrong");feedback.textContent="Casi. "+q.why;feedback.style.color="#b91c1c"}scoreEl.textContent=`Puntuación: ${score} de ${questions.length}`;next.disabled=false;if(current===questions.length-1){next.style.display="none";restart.style.display="inline-block";restart.textContent="Intentar de nuevo ↻";feedback.textContent+=(score===3?" ¡Excelente, lograste todas!":` Resultado final: ${score} de ${questions.length}. ¡Sigue practicando!`)}}
+next.addEventListener("click",()=>{if(current<questions.length-1){current++;render()}});restart.addEventListener("click",()=>{current=0;score=0;render()});render();
+</script>
+</body>
+</html>
